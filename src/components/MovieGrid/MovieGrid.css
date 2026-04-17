@@ -1,0 +1,106 @@
+/* ─────────────────────────────────────────────────────────────
+   MovieGrid Styles
+───────────────────────────────────────────────────────────── */
+
+.movie-grid-wrapper {
+  width: 100%;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.25rem;
+  padding: 0.25rem 0;
+}
+
+@media (min-width: 640px)  { .movie-grid { grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); } }
+@media (min-width: 1024px) { .movie-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; } }
+@media (min-width: 1440px) { .movie-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); } }
+
+/* ── Empty / Error State ── */
+.movie-grid__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  gap: 1rem;
+  text-align: center;
+}
+
+.movie-grid__icon { font-size: 3rem; }
+.movie-grid__msg  { color: var(--text-secondary); font-size: 1rem; }
+
+/* ── Skeleton Loader ── */
+.skeleton {
+  pointer-events: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.skeleton__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-from) 25%,
+    var(--skeleton-to)   50%,
+    var(--skeleton-from) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeleton__info {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton__line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-from) 25%,
+    var(--skeleton-to)   50%,
+    var(--skeleton-from) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeleton__line--short { width: 45%; }
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── Load More ── */
+.movie-grid__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.btn-load-more {
+  padding: 0.7rem 2.5rem;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+
+.btn-load-more:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.04);
+}

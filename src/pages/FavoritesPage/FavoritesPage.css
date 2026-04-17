@@ -1,0 +1,50 @@
+/* ─────────────────────────────────────────────────────────────
+   FavoritesPage Styles
+───────────────────────────────────────────────────────────── */
+
+.favorites-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.favorites-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.favorites-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.favorites-subtitle {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.btn-clear-all {
+  padding: 0.5rem 1.4rem;
+  border: 1.5px solid rgba(233, 69, 96, 0.5);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-clear-all:hover {
+  background: var(--accent);
+  color: #fff;
+}

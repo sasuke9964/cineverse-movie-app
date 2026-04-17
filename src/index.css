@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ═══════════════════════════════════════════════════════════
+   CineVerse — Global Design System
+   Netflix-inspired dark theme with vibrant accent colours
+═══════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Brand colours */
+  --accent:          #e94560;
+  --accent-hover:    #ff5c7a;
+  --accent-glow:     rgba(233, 69, 96, 0.35);
+
+  /* Backgrounds */
+  --bg:              #0a0a14;
+  --surface:         #12121f;
+  --card-bg:         #1a1a2e;
+  --card-hover:      #1e1e35;
+
+  /* Text */
+  --text-primary:    #f0f0f0;
+  --text-secondary:  #8a8aaa;
+
+  /* Skeleton shimmer */
+  --skeleton-from:   #1a1a2e;
+  --skeleton-to:     #22223a;
+
+  /* Misc */
+  --radius:          12px;
+  --transition:      0.25s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(233, 69, 96, 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Buttons */
+button { font-family: inherit; }
+
+/* ── Footer ── */
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.app-footer a { color: var(--accent); text-decoration: none; }
+.app-footer a:hover { text-decoration: underline; }
