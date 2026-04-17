@@ -31,7 +31,8 @@ CineVerse is a modern movie discovery application built using React.js that allo
 
 ## 📸 Screenshot
 
-(Add your app screenshot here)
+<img width="1920" height="1080" alt="Screenshot (289)" src="https://github.com/user-attachments/assets/79f73ae0-1fbf-4389-8514-21912771976f" />
+
 
 ## ▶️ How to Run
 
